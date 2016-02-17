@@ -9,8 +9,8 @@ where `P()` and `prior()` are defined as
 and we solve this task with nested sampling.
 The notation is loosely based on [J. Skilling, "Nested sampling for general Bayesian computation", *Bayesian analysis*, **1** (2006), 833-859](https://projecteuclid.org/euclid.ba/1340370944).
 
-
-Note that, for this problem, `X(P_value)` can be computed analytically.
+####Note 1
+For this problem, `X(P_value)` can be computed analytically.
 However, we use its stochastic version
 
     X_i = t * X_{i-1}
@@ -19,6 +19,10 @@ where t is drawn from
     prob(t) = N * t^(N - 1),
 to remain in a general case.
 
+####Note 2
+The nested-sampling algorithm requires the ability to draw a sample theta from `P(theta)`, under the constraint that `P(theta)` is larger than a given value.
+Instead of using a general scheme for this taks (which could be for instance a rejection-sampling scheme), we take advantage of the simplicity of `P(theta)` and write a direct-sampling `sample_theta()` function.
+This cannot be done for a more general, possibly high-dimensional, problem.
 
 ##Files
 
@@ -48,7 +52,7 @@ The docstring of the main function reads
 ```
 
 ####example_1.py
-The nested-sampling algorithm is run `n_runs=1000` times, and a histogram of `log(Z)` and some of the `(X_i,P_i)` curves are shown.
+The nested-sampling algorithm is run `n_runs=1000` times. A histogram of `log(Z)` and some of the `(X_i,P_i)` curves are shown.
 
 Example of output:
 ![fig_example_1.png](fig_example_1.png?raw=true)
