@@ -7,7 +7,8 @@ where `P()` and `prior()` are defined as
     P(theta) = exp(- beta * x ** 2 / 2.0),
     prior(theta) = 1/2,
 and we solve this task with nested sampling.
-The notation is loosely based on [J. Skilling, Nested sampling for general Bayesian computation, Bayesian analysis, **1** (2006), 833-859].
+The notation is loosely based on [J. Skilling, "Nested sampling for general Bayesian computation", *Bayesian analysis*, **1** (2006), 833-859](https://projecteuclid.org/euclid.ba/1340370944).
+
 
 Note that, for this problem, `X(P_value)` can be computed analytically.
 However, we use its stochastic version
