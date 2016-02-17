@@ -21,7 +21,7 @@ to remain in a general case.
 
 ####Note 2
 The nested-sampling algorithm requires the ability to draw a sample theta from `P(theta)`, under the constraint that `P(theta)` is larger than a given value.
-Instead of using a general scheme for this taks (which could be for instance a rejection-sampling scheme), we take advantage of the simplicity of `P(theta)` and write a direct-sampling `sample_theta()` function.
+Instead of using a general scheme for this task (which could be for instance a rejection-sampling scheme), we take advantage of the simplicity of `P(theta)` and write a direct-sampling `sample_theta()` function.
 This cannot be done for a more general, possibly high-dimensional, problem.
 
 ##Files
